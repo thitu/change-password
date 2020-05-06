@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Starting Point...</title>
+    <meta name='turbolinks-root' content='/'>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag '//fonts.googleapis.com/css2?family=Questrial&display=swap' %>
+    <%= javascript_tag '//kit.fontawesome.com/54334ef59c.js' %>
+  </head>
+
+  <body style="font-family: 'Questrial', sans-serif;">
+    <div class='container-fluid'>
+    <%= yield %>
+    </div>
+  </body>
+</html>
+<% flash.discard %>

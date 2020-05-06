@@ -1,0 +1,42 @@
+// ref: https://sass-lang.com/
+
+.email_field, .password_field {
+  text-align: center;
+  display: block;
+  max-width: 300px;
+  margin: auto;
+  padding: 0.25em;
+  margin-bottom: 0.5em;
+  font-size: 1em;
+}
+.top_margin {
+  margin-top: 0.25em;
+}
+.purple {
+  background-color: #7B46D1 !important;
+  color: white !important;
+}
+.flash_div {
+  font-size: 1.25em;
+}
+.form_div {
+  position: absolute;
+  text-align:center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.instructions {
+  font-size: 1.25em;
+}
+.email_field {
+  margin-top: 1em;
+  padding: 0.25em;
+}
+.centered {
+  text-align: center;
+  margin: 0 auto;
+}
+input[type=submit] {
+  margin-top: 0.5em;
+}
