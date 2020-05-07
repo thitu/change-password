@@ -4,6 +4,9 @@ class ChangePasswordJob < ApplicationJob
   queue_as :default
 
   def perform(*args)
-    ApplicationMailer.notify(args[0]).deliver_now
+    raise 'Missing PASSWD_SH from ENV' unless ENV['PASSWD_SH'].present?
+
+    result = system("#{ENV['PASSWD_SH']} #{args[0]} #{args[1]}")
+    ApplicationMailer.notify(args[0]).deliver_now if result == true
   end
 end
