@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/thitu/change-password.svg?token=ERoqgs7tKf7xAGTsABr8&branch=master)](https://travis-ci.com/thitu/change-password)
+[![Build Status](https://travis-ci.com/thitu/change-password.svg?branch=master)](https://travis-ci.com/thitu/change-password)
 
 # Change Passwords with Trusona
 
