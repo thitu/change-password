@@ -1,8 +1,6 @@
 language: ruby
 script: true
 os: linux
-rvm:
-  - 2.6.0
 
 cache:
   bundler: true
