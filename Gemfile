@@ -27,7 +27,6 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'simplecov', '0.17', require: false
-  gem 'simplecov-json', require: false
 end
 
 group :development do
