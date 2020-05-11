@@ -10,13 +10,17 @@ Rails.application.load_tasks
 if Rails.env.development? || Rails.env.test?
   require('rubocop/rake_task')
   require('dotenv/tasks')
+  require('coveralls/rake/task')
 
   RuboCop::RakeTask.new
+  Coveralls::RakeTask.new
+
   Rake::Task['default'].clear
 
   task :default do
     Rake::Task['spec'].invoke
     Rake::Task['cucumber'].invoke
     Rake::Task['rubocop:auto_correct'].invoke
+    Rake::Task['coveralls:push'].invoke
   end
 end
