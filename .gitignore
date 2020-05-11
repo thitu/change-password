@@ -18,6 +18,7 @@ public/assets
 .byebug_history
 
 config/master.key
+.coveralls.yml
 
 vendor/
 coverage/

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+CONFIG_FILE=$1
+
+if [[ $TRAVIS == true ]]; then
+  if [ -n "$CONFIG_FILE" ]; then
+    if [ -n "$SERVICE_NAME" ]; then
+      if [ -n "$REPO_TOKEN" ]; then
+
+        echo "service_name: $SERVICE_NAME" > $CONFIG_FILE
+        echo "repo_token: $REPO_TOKEN" >> $CONFIG_FILE
+
+        echo "Coveralls from https://coveralls.io/github/thitu/change-password configured"
+      fi
+    fi
+  fi
+fi
