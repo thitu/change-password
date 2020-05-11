@@ -218,8 +218,6 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.7.0)
-    repo-small-badge (0.2.7)
-      victor (~> 0.2.8)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -273,9 +271,6 @@ GEM
       docile (~> 1.1)
       simplecov-html (~> 0.11)
     simplecov-html (0.12.2)
-    simplecov-small-badge (0.2.4)
-      repo-small-badge (~> 0.2.7)
-      simplecov (~> 0.17)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -308,7 +303,6 @@ GEM
       unf_ext
     unf_ext (0.0.7.7)
     unicode-display_width (1.7.0)
-    victor (0.2.8)
     web-console (4.0.2)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -352,8 +346,6 @@ DEPENDENCIES
   sass-rails
   selenium-webdriver
   shoulda-matchers
-  simplecov
-  simplecov-small-badge
   spring
   spring-watcher-listen
   trusona

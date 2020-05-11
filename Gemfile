@@ -43,7 +43,5 @@ group :test do
   gem 'rails-controller-testing'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
-  gem 'simplecov'
-  gem 'simplecov-small-badge'
   gem 'webdrivers'
 end
