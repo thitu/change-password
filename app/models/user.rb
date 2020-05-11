@@ -29,7 +29,7 @@ class User
   def short_password
     return unless errors.empty?
 
-    errors.add(:base, SHORT_PASSWORD_ERROR) if @password.length < PASSWORD_LENGTH
+    errors.add(:base, SHORT_PASSWORD_ERROR) if @password.nil? || @password.length < PASSWORD_LENGTH
   end
 
   def invalid_password
