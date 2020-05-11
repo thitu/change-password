@@ -17,5 +17,13 @@ install:
   - gem install bundler
   - bundle install
 
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod 700 ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
   - bundle exec rake
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
