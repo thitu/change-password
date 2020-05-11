@@ -6,7 +6,7 @@ rvm:
 cache:
   bundler: true
   directories:
-    - vendor/cache/
+    - vendor/
 
 before_install:
   - bin/ci/configure-coveralls
