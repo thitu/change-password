@@ -26,4 +26,4 @@ script:
   - bundle exec rake
 
 after_success:
-  - ./cc-test-reporter after-build --exit-code 0
+  - ./cc-test-reporter after-build --coverage-input-type SimpleCov --exit-code 0
