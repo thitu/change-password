@@ -8,8 +8,8 @@ require_relative('config/application')
 Rails.application.load_tasks
 
 if Rails.env.test?
-  require('rubocop/rake_task')
   require('dotenv/tasks')
+  require('rubocop/rake_task')
 
   RuboCop::RakeTask.new
   Rake::Task['default'].clear
