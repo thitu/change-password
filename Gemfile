@@ -31,6 +31,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'guard'
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
