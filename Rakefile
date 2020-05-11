@@ -7,7 +7,7 @@ require_relative('config/application')
 
 Rails.application.load_tasks
 
-if Rails.env.test?
+if Rails.env.development? || Rails.env.test?
   require('dotenv/tasks')
   require('rubocop/rake_task')
 

@@ -10,7 +10,7 @@ require('cucumber/rails')
 require('simplecov')
 
 SimpleCov.start('rails') do
-  formatter = SimpleCov::Formatter::SimpleFormatter
+  formatter SimpleCov::Formatter::SimpleFormatter
   add_filter 'vendor'
 end
 
