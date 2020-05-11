@@ -45,7 +45,7 @@ On success, a "your password was changed" email will be sent for confirmation, o
 Of course, there is an implied assumption that the "username" is an email address. Doh!
 
 
-## Run the features
+## Run the specs & features
 
 ```bash
 bundle exec rake
