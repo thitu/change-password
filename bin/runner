@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+source .env
+
+cert=$SSL_CERT
+port=$SSL_PORT
+key=$SSL_KEY
+
+rails s -e production --log-to-stdout --early-hints -b "ssl://0.0.0.0:$port?key=$key&cert=$cert"

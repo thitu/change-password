@@ -1,0 +1,47 @@
+## https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml
+##
+Documentation:
+  Enabled: false
+
+require: rubocop-performance
+
+AllCops:
+  EnabledByDefault: true
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'  
+    - 'lib/**/*'  
+    - 'bin/**/*'
+    - 'tmp/**'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'Guardfile'
+    - 'Rakefile'
+
+Metrics:
+  Exclude:
+    - 'spec/**/*'
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Style/Copyright:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: false
+
+Bundler/GemComment:
+  Enabled: false
+
+Style/MethodCalledOnDoEndBlock:
+  Exclude:
+    - 'spec/**/*'

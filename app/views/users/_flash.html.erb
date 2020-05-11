@@ -1,0 +1,19 @@
+<div class='flash_div top_margin'>
+  <% if flash[:danger] %>
+    <div class='alert alert-danger centered' role='alert'><%= flash[:danger] %></div>
+  <% end %>
+  <% if flash[:success] %>
+    <div class='alert alert-success centered' role='alert'><%= flash[:success] %></div>
+  <% end %>
+  <% if flash[:warning] %>
+    <div class='alert alert-danger centered' role='alert'><%= flash[:warning] %></div>
+  <% end %>
+  <% if flash[:secondary] %>
+    <div class='alert alert-danger centered' role='alert'><%= flash[:secondary] %></div>
+  <% end %>
+  <% if @authorized %>
+    <% @user.errors.full_messages.uniq.each do |error| %>
+      <div class='alert alert-danger centered' role='alert'><%= error %></div>
+    <% end %>
+  <% end %>
+</div>

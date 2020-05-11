@@ -1,0 +1,19 @@
+language: ruby
+os: linux
+
+cache:
+  bundler: true
+  directories:
+    - vendor/cache/
+
+before_install:
+  - mkdir -p app/assets/images
+  - ln -sf spec/features .
+  - bundle config set path 'vendor/cache'
+
+install:
+  - gem install bundler
+  - bundle install
+
+script:
+  - bundle exec rake
