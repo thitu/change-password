@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.com/thitu/change-password.svg?branch=master)](https://travis-ci.com/thitu/change-password)
-[![Coverage Status](https://coveralls.io/repos/github/thitu/change-password/badge.svg?branch=master)](https://coveralls.io/github/thitu/change-password?branch=master)
 
 # Change Passwords with Trusona
 

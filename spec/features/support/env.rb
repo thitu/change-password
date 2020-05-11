@@ -7,7 +7,9 @@
 # files.
 
 require('cucumber/rails')
-require('simplecov')
+require('simplecov-json')
+
+SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
 
 SimpleCov.start('rails') do
   add_filter 'vendor'
