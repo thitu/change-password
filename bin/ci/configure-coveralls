@@ -2,7 +2,7 @@
 
 set -e
 
-CONFIG_FILE=$1
+CONFIG_FILE=.coveralls.yml
 
 if [[ $TRAVIS == true ]]; then
   if [ -n "$CONFIG_FILE" ]; then

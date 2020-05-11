@@ -7,6 +7,7 @@ cache:
     - vendor/cache/
 
 before_install:
+  - bin/ci/configure-coveralls
   - mkdir -p app/assets/images
   - ln -sf spec/features .
   - bundle config set path 'vendor/cache'
