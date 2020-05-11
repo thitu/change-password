@@ -21,6 +21,7 @@ gem('tzinfo-data')
 group :development, :test do
   gem 'brakeman'
   gem 'byebug'
+  gem 'coveralls', require: false
   gem 'factory_bot'
   gem 'factory_bot_rails'
   gem 'rspec-rails'

@@ -9,10 +9,14 @@
 require('cucumber/rails')
 require('simplecov')
 
+require('coveralls')
+
 SimpleCov.start('rails') do
   formatter SimpleCov::Formatter::SimpleFormatter
   add_filter 'vendor'
 end
+
+Coveralls.wear!
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
