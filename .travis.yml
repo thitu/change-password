@@ -1,7 +1,7 @@
 language: ruby
 os: linux
 rvm:
-  - 2.6
+  - 2.6.0
 
 cache:
   bundler: true
