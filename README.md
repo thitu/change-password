@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/thitu/change-password.svg?branch=master)](https://travis-ci.com/thitu/change-password)
-[![Coverage Status](https://coveralls.io/repos/github/thitu/change-password/badge.svg)](https://coveralls.io/github/thitu/change-password)
+[![Coverage Status](https://coveralls.io/repos/github/thitu/change-password/badge.svg?branch=master)](https://coveralls.io/github/thitu/change-password?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3c28af5046d2ab4baaea/maintainability)](https://codeclimate.com/github/thitu/change-password/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/3c28af5046d2ab4baaea/test_coverage)](https://codeclimate.com/github/thitu/change-password/test_coverage)
 
