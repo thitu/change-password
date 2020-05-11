@@ -9,7 +9,7 @@
 require('cucumber/rails')
 require('simplecov')
 
-SimpleCov.start 'rails' do
+SimpleCov.start('rails') do
   add_filter 'vendor'
 end
 
