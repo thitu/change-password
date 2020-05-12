@@ -31,5 +31,23 @@ RSpec.describe(User, type: :model) do
       }
       expect(User.new(hash)).to(be_valid)
     end
+
+    it 'is valid if the password values match' do
+      hash = {
+        email_address: 'a@b.co',
+        password: '123456789',
+        password_confirmation: '123456789'
+      }
+      expect(User.new(hash)).to(be_valid)
+    end
+
+    it 'is invalid if the password values do not match' do
+      hash = {
+        email_address: 'a@b.co',
+        password: '123456789',
+        password_confirmation: '1234567890'
+      }
+      expect(User.new(hash)).to(be_invalid)
+    end
   end
 end

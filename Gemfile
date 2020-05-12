@@ -32,6 +32,7 @@ end
 
 group :development do
   gem 'guard'
+  gem 'guard-rspec', require: false
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
