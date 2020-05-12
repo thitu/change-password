@@ -3,6 +3,36 @@
 require('rails_helper')
 
 RSpec.describe(User, type: :model) do
+  context '#authenticate' do
+    before { ActiveJob::Base.queue_adapter = :test }
+
+    it 'will queue an authentication job if the user is valid' do
+      user = User.new({
+                        email_address: 'a@b.com',
+                        password: '12345678',
+                        password_confirmation: '12345678'
+                      })
+
+      user.authenticate
+
+      expect(AuthenticateJob).to(have_been_enqueued)
+      expect(ChangePasswordJob).to(have_been_enqueued.exactly(0))
+    end
+
+    it 'will *not* queue an authentication job if the user is invalid' do
+      user = User.new({
+                        email_address: 'a@b.com',
+                        password: '123456789',
+                        password_confirmation: '12345678'
+                      })
+
+      user.authenticate
+
+      expect(AuthenticateJob).to(have_been_enqueued.exactly(0))
+      expect(ChangePasswordJob).to(have_been_enqueued.exactly(0))
+    end
+  end
+
   context '#validate' do
     it 'is invalid if password is empty' do
       expect(User.new({})).to(be_invalid)
