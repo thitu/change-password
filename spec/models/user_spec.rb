@@ -49,5 +49,23 @@ RSpec.describe(User, type: :model) do
       }
       expect(User.new(hash)).to(be_invalid)
     end
+
+    it 'is invalid if the password includes any part of the email address' do
+      hash = {
+        email_address: 'a@b.co',
+        password: '12345a@b.co6789',
+        password_confirmation: '12345a@b.co6789'
+      }
+      expect(User.new(hash)).to(be_invalid)
+    end
+
+    it 'is invalid if the email address includes any part of the password' do
+      hash = {
+        email_address: 'a@b.co',
+        password: '12345a@b.co6789',
+        password_confirmation: '12345a@b.co6789'
+      }
+      expect(User.new(hash)).to(be_invalid)
+    end
   end
 end
