@@ -14,12 +14,12 @@ RSpec.describe('POST requests', type: :request) do
   end
 
   it 'responds with not found if specified id is not authorized' do
-    post '/', params: { id: 'bob@bob.com' }
+    post '/', params: { id: 'user0@bob.com', intent: 'authorize' }
     expect(response).to(be_not_found)
   end
 
   it 'responds with success if specified id is authorized' do
-    post '/', params: { id: 'user1@bob.com' }
+    post '/', params: { id: 'user1@bob.com', intent: 'authorize' }
     expect(response).to(be_successful)
   end
 end

@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.com/thitu/change-password.svg?branch=master)](https://travis-ci.com/thitu/change-password)
-[![Maintainability](https://api.codeclimate.com/v1/badges/3c28af5046d2ab4baaea/maintainability)](https://codeclimate.com/github/thitu/change-password/maintainability)
-[![Coverage Status](https://coveralls.io/repos/github/thitu/change-password/badge.svg?branch=master)](https://coveralls.io/github/thitu/change-password?branch=master)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/3c28af5046d2ab4baaea/test_coverage)](https://codeclimate.com/github/thitu/change-password/test_coverage)
+[![Build Status](https://travis-ci.com/thitu/change-password.svg?branch=master&x=36448b9a0cfc)](https://travis-ci.com/thitu/change-password?x=36448b9a0cfc)
+[![Maintainability](https://api.codeclimate.com/v1/badges/3c28af5046d2ab4baaea/maintainability?x=36448b9a0cfc)](https://codeclimate.com/github/thitu/change-password/maintainability?x=36448b9a0cfc)
+[![Coverage Status](https://coveralls.io/repos/github/thitu/change-password/badge.svg?branch=master&x=36448b9a0cfc)](https://coveralls.io/github/thitu/change-password?branch=master&x=36448b9a0cfc)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/3c28af5046d2ab4baaea/test_coverage?x=36448b9a0cfc)](https://codeclimate.com/github/thitu/change-password/test_coverage?x=36448b9a0cfc)
 
 # Change Passwords with Trusona
 

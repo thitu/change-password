@@ -19,8 +19,8 @@ RSpec.describe('PATCH requests', type: :request) do
   end
 
   it 'responds with success if session is authorized' do
-    post '/', params: { id: 'user1@bob.com' }
-    patch '/', params: { id: 'user1@bob.com', pw_0: '12345678', pw_1: '12345678', intent: 'authorize' }
+    post '/', params: { id: 'user1@bob.com', intent: 'authorize' }
+    patch '/', params: { id: 'user1@bob.com', pw_0: '12345678', pw_1: '12345678', intent: 'authenticate' }
     expect(response).to(be_successful)
   end
 end
