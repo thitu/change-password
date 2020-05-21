@@ -8,6 +8,10 @@ cert=$SSL_CERT
 port=$SSL_PORT
 key=$SSL_KEY
 
+clear
+
+bundle install
+
 rails s \
   --environment=production \
   --log-to-stdout \
