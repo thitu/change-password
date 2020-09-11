@@ -6,6 +6,7 @@ Documentation:
 require: rubocop-performance
 
 AllCops:
+  NewCops: enable
   EnabledByDefault: true
   Exclude:
     - 'db/**/*'
@@ -34,6 +35,9 @@ Metrics/BlockLength:
     - 'spec/**/*'
 
 Style/Copyright:
+  Enabled: false
+
+Lint/ConstantResolution:
   Enabled: false
 
 Style/DocumentationMethod:
