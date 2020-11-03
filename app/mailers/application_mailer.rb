@@ -8,7 +8,7 @@ class ApplicationMailer < ActionMailer::Base
     message ||= 'Your password was changed'
 
     mail(to: email, subject: 'Password was successfully changed') do |format|
-      format.text { render plain: message }
+      format.text { render(plain: message) }
     end
   end
 end

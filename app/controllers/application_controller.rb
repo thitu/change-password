@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def status(code)
     respond_to do |format|
-      format.html { render template: 'errors/generic', layout: false, status: code }
+      format.html { render(template: 'errors/generic', layout: false, status: code) }
     end
   end
 

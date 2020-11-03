@@ -25,5 +25,4 @@ Then('I should see a {string} button with a value of {string}') do |intent, stri
   expect(page).to(have_selector("input[value='#{string}']"))
 end
 
-When('I do not provide any text input') do
-end
+When('I do not provide any text input') { ; }
