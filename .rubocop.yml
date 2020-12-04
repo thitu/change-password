@@ -34,6 +34,9 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
 
+Lint/EmptyBlock:
+  Enabled: false
+
 Style/Copyright:
   Enabled: false
 
@@ -41,6 +44,9 @@ Lint/ConstantResolution:
   Enabled: false
 
 Style/DocumentationMethod:
+  Enabled: false
+
+Naming/VariableNumber:
   Enabled: false
 
 Bundler/GemComment:
