@@ -29,7 +29,7 @@ group :development, :test do
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
-  gem 'simplecov', '0.20.0', require: false
+  gem 'simplecov', '0.21.1', require: false
 end
 
 group :development do
