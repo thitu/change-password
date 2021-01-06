@@ -23,6 +23,7 @@ before_script:
 
 script:
   - bundle exec rake
+  - bundle exec rubocop
 
 after_success:
   - ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code 0

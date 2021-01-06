@@ -17,6 +17,6 @@ if Rails.env.development? || Rails.env.test?
   task :default do
     Rake::Task['spec'].invoke
     Rake::Task['cucumber'].invoke
-    Rake::Task['rubocop:auto_correct'].invoke
+    # Rake::Task['rubocop'].invoke
   end
 end

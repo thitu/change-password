@@ -13,7 +13,7 @@ AllCops:
     - 'config/**/*'  
     - 'lib/**/*'  
     - 'bin/**/*'
-    - 'tmp/**'
+    - 'tmp/**/*'
     - 'spec/spec_helper.rb'
     - 'spec/rails_helper.rb'
     - 'node_modules/**/*'
