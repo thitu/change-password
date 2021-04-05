@@ -43,11 +43,13 @@ class UsersController < ApplicationController
     password_confirmation = params[:pw_1]&.squish
     password = params[:pw_0]&.squish
 
-    @user = User.new({
-                       password_confirmation: password_confirmation,
-                       email_address: email_address,
-                       intent: params[:intent],
-                       password: password
-                     })
+    @user = User.new(
+      {
+        password_confirmation: password_confirmation,
+        email_address: email_address,
+        intent: params[:intent],
+        password: password
+      }
+    )
   end
 end

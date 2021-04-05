@@ -7,11 +7,13 @@ RSpec.describe(User, type: :model) do
     before { ActiveJob::Base.queue_adapter = :test }
 
     it 'will queue an authentication job if the user is valid' do
-      user = User.new({
-                        email_address: 'a@b.com',
-                        password: '12345678',
-                        password_confirmation: '12345678'
-                      })
+      user = User.new(
+        {
+          email_address: 'a@b.com',
+          password: '12345678',
+          password_confirmation: '12345678'
+        }
+      )
 
       user.authenticate
 
@@ -20,11 +22,13 @@ RSpec.describe(User, type: :model) do
     end
 
     it 'will *not* queue an authentication job if the user is invalid' do
-      user = User.new({
-                        email_address: 'a@b.com',
-                        password: '123456789',
-                        password_confirmation: '12345678'
-                      })
+      user = User.new(
+        {
+          email_address: 'a@b.com',
+          password: '123456789',
+          password_confirmation: '12345678'
+        }
+      )
 
       user.authenticate
 
