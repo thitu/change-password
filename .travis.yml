@@ -2,11 +2,6 @@ language: ruby
 script: true
 os: linux
 
-cache:
-  bundler: true
-  directories:
-    - vendor/
-
 before_install:
   - bin/ci/configure-coveralls
   - mkdir -p app/assets/images

@@ -6,17 +6,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby('2.6.6')
 
-gem('bootsnap')
-gem('bootstrap')
-gem('dotenv-rails')
-gem('jbuilder')
-gem('jquery-rails')
-gem('puma')
-gem('rails', '~> 6.1.0')
-gem('sass-rails')
-gem('trusona')
-gem('turbolinks')
-gem('tzinfo-data')
+gem 'bootsnap'
+gem 'bootstrap'
+gem 'dotenv-rails'
+gem 'jbuilder'
+gem 'jquery-rails'
+gem 'puma'
+gem 'rails', '~> 6.1.0'
+gem 'sass-rails'
+gem 'trusona'
+gem 'turbolinks'
+gem 'tzinfo-data'
 
 group :development, :test do
   gem 'brakeman'
