@@ -421,6 +421,7 @@ DEPENDENCIES
   simplecov (= 0.21.2)
   spring
   spring-watcher-listen
+  sync
   trusona
   turbolinks
   tzinfo-data
