@@ -43,6 +43,9 @@ Lint/EmptyBlock:
 Style/Copyright:
   Enabled: false
 
+Bundler/GemVersion:
+  Enabled: false
+
 Lint/ConstantResolution:
   Enabled: false
 

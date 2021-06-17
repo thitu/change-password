@@ -27,9 +27,7 @@ RSpec.describe(AuthenticateJob, type: :job) do
         .to(receive(:create).with(any_args))
         .and_yield(Trusona::Resources::Trusonafication.new)
 
-      allow_any_instance_of(Trusona::Resources::Trusonafication)
-        .to(receive(:accepted?))
-        .and_return(true)
+      allow_any_instance_of(Trusona::Resources::Trusonafication).to(receive(:accepted?)).and_return(true)
 
       AuthenticateJob.perform_now('dummy@bob.com', 'password')
 
@@ -41,9 +39,7 @@ RSpec.describe(AuthenticateJob, type: :job) do
         .to(receive(:create).with(any_args))
         .and_yield(Trusona::Resources::Trusonafication.new)
 
-      allow_any_instance_of(Trusona::Resources::Trusonafication)
-        .to(receive(:accepted?))
-        .and_return(false)
+      allow_any_instance_of(Trusona::Resources::Trusonafication).to(receive(:accepted?)).and_return(false)
 
       AuthenticateJob.perform_now('dummy@bob.com', 'password')
 

@@ -7,13 +7,7 @@ RSpec.describe(User, type: :model) do
     before { ActiveJob::Base.queue_adapter = :test }
 
     it 'will queue an authentication job if the user is valid' do
-      user = User.new(
-        {
-          email_address: 'a@b.com',
-          password: '12345678',
-          password_confirmation: '12345678'
-        }
-      )
+      user = User.new({ email_address: 'a@b.com', password: '12345678', password_confirmation: '12345678' })
 
       user.authenticate
 
@@ -22,13 +16,7 @@ RSpec.describe(User, type: :model) do
     end
 
     it 'will *not* queue an authentication job if the user is invalid' do
-      user = User.new(
-        {
-          email_address: 'a@b.com',
-          password: '123456789',
-          password_confirmation: '12345678'
-        }
-      )
+      user = User.new({ email_address: 'a@b.com', password: '123456789', password_confirmation: '12345678' })
 
       user.authenticate
 
@@ -49,56 +37,32 @@ RSpec.describe(User, type: :model) do
     end
 
     it 'is valid if password is 8 characters' do
-      hash = {
-        email_address: 'a@b.co',
-        password: '12345678',
-        password_confirmation: '12345678'
-      }
+      hash = { email_address: 'a@b.co', password: '12345678', password_confirmation: '12345678' }
       expect(User.new(hash)).to(be_valid)
     end
 
     it 'is valid if password is more than 8 characters' do
-      hash = {
-        email_address: 'a@b.co',
-        password: '123456789',
-        password_confirmation: '123456789'
-      }
+      hash = { email_address: 'a@b.co', password: '123456789', password_confirmation: '123456789' }
       expect(User.new(hash)).to(be_valid)
     end
 
     it 'is valid if the password values match' do
-      hash = {
-        email_address: 'a@b.co',
-        password: '123456789',
-        password_confirmation: '123456789'
-      }
+      hash = { email_address: 'a@b.co', password: '123456789', password_confirmation: '123456789' }
       expect(User.new(hash)).to(be_valid)
     end
 
     it 'is invalid if the password values do not match' do
-      hash = {
-        email_address: 'a@b.co',
-        password: '123456789',
-        password_confirmation: '1234567890'
-      }
+      hash = { email_address: 'a@b.co', password: '123456789', password_confirmation: '1234567890' }
       expect(User.new(hash)).to(be_invalid)
     end
 
     it 'is invalid if the password includes any part of the email address' do
-      hash = {
-        email_address: 'a@b.co',
-        password: '12345a@b.co6789',
-        password_confirmation: '12345a@b.co6789'
-      }
+      hash = { email_address: 'a@b.co', password: '12345a@b.co6789', password_confirmation: '12345a@b.co6789' }
       expect(User.new(hash)).to(be_invalid)
     end
 
     it 'is invalid if the email address includes any part of the password' do
-      hash = {
-        email_address: '12345678@b.co',
-        password: '12345678',
-        password_confirmation: '12345678'
-      }
+      hash = { email_address: '12345678@b.co', password: '12345678', password_confirmation: '12345678' }
       expect(User.new(hash)).to(be_invalid)
     end
   end
