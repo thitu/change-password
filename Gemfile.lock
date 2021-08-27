@@ -404,7 +404,7 @@ DEPENDENCIES
   launchy
   listen
   puma
-  rails (~> 6.1.4.1)
+  rails
   rails-controller-testing
   rspec-rails
   rubocop
