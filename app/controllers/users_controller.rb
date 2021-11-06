@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   def callback
     return error_status(404) unless authorized_users.include?(payload['sub'])
 
-    redirect_to("/openid/callback/#{params[:state]}/#{payload['nonce']}")
+    redirect_to("/openid/callback/#{params[:state]}")
   end
 
   def process_callback
@@ -73,7 +73,7 @@ class UsersController < ApplicationController
   def authorize
     return error_status(404) unless authorized_users.include?(@email_address)
 
-    cookies[:nonce] = nonce = SecureRandom.alphanumeric(16)
+    cookies[:nonce] = nonce = SecureRandom.alphanumeric(32)
     cookies[:state] = state = SecureRandom.uuid
     cookies[:email_address] = @email_address
     cookies[:checksum] = checksum([current_salt, state, nonce, @email_address])
