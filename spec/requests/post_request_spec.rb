@@ -13,13 +13,18 @@ RSpec.describe('POST requests', type: :request) do
     expect(response).to(render_template(:index))
   end
 
-  it 'responds with not found if specified id is not authorized' do
-    post '/', params: { id: 'user0@bob.com', intent: 'authorize' }
-    expect(response).to(be_not_found)
+  context 'if specified user is not authorized' do
+    it 'responds with not found' do
+      post '/', params: { id: 'user0@bob.com', intent: 'authorize' }
+      expect(response).to(be_not_found)
+    end
   end
 
-  it 'responds with success if specified id is authorized' do
-    post '/', params: { id: 'user1@bob.com', intent: 'authorize' }
-    expect(response).to(be_successful)
+  context 'if specified user is authorized' do
+    it 'redirects to the OIDC endpoint' do
+      post '/', params: { id: 'user1@bob.com', intent: 'authorize' }
+      expect(response.status).to(be(302))
+      expect(response.location).to(start_with("#{ENV['OIDC_AUTHORIZATION_ENDPOINT']}?"))
+    end
   end
 end
