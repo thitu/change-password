@@ -22,5 +22,8 @@ config/master.key
 
 vendor/
 coverage/
+
 .env
+.env.local
+
 .ssl

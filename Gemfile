@@ -4,16 +4,19 @@ source('https://rubygems.org')
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.3'
+ruby '2.7.4'
 
 gem 'bootsnap'
 gem 'bootstrap'
 gem 'dotenv-rails'
+gem 'httparty'
 gem 'jbuilder'
 gem 'jquery-rails'
+gem 'jwt'
 gem 'puma'
 gem 'rails'
 gem 'sass-rails'
+gem 'secure_headers'
 gem 'trusona'
 gem 'turbolinks'
 gem 'tzinfo-data'

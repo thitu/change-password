@@ -24,6 +24,10 @@ Add correct variables to `.env`. See `.env.example` for the template.
 
 You can obtain your unique-to-you Trusona credentials at [dashboard.trusona.com](https://dashboard.trusona.com)
 
+Do set `TRUSONA_TOKEN` and `TRUSONA_SECRET` environment variables with those credentials.
+
+Additionally, while there, create a `Generic OIDC Integration` and provide the `Client ID` to an environment variable named `OIDC_CLIENT_ID`
+
 
 ## Authorized Users
 

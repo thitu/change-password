@@ -37,6 +37,9 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Max: 12
 
+Metrics/AbcSize:
+  Enabled: false
+
 Lint/EmptyBlock:
   Enabled: false
 
