@@ -11,16 +11,16 @@ class User
   validate :invalid_password
   validate :matching_passwords
 
-  def initialize(hash)
-    @password_confirmation = hash[:password_confirmation]
-    @email_address = hash[:email_address]
-    @password = hash[:password]
+  def initialize(email_address:, password: nil, password_confirmation: nil)
+    @password_confirmation = password_confirmation
+    @email_address = email_address
+    @password = password
   end
 
-  def authenticate
+  def update_credentials
     return unless valid?
 
-    AuthenticateJob.perform_later(@email_address, @password)
+    ApprovePasswordChangeJob.perform_later(@email_address, @password)
     true
   end
 

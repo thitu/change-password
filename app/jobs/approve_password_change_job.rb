@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AuthenticateJob < ApplicationJob
+class ApprovePasswordChangeJob < ApplicationJob
   queue_as :default
 
   def perform(*args)

@@ -3,8 +3,8 @@
     <%= form_with(url: '/', method: @authorized ? 'PATCH' : 'POST') do %>
       <%= text_field_tag(:id, @user&.email_address, maxlength: 32, size: 99, placeholder: 'Email Address', class: 'email_field', autocomplete: 'off', readonly: @authorized) %>
       <% if @authorized %>
-        <%= text_field_tag(:pw_0, nil, maxlength: 32, size: 99, placeholder: 'New Password', class: 'password_field', autocomplete: 'off', type: 'password') %>
-        <%= text_field_tag(:pw_1, nil, maxlength: 32, size: 99, placeholder: 'Repeat New Password', class: 'password_field', autocomplete: 'off', type: 'password') %>
+        <%= text_field_tag(:password, nil, maxlength: 32, size: 99, placeholder: 'New password', class: 'password_field', autocomplete: 'off', type: 'password') %>
+        <%= text_field_tag(:password_confirmation, nil, maxlength: 32, size: 99, placeholder: 'Confirm new password', class: 'password_field', autocomplete: 'off', type: 'password') %>
       <% end %>
       <% intent = @authorized ? 'authenticate' : 'authorize' %>
       <%= submit_tag(intent, name: 'intent', class: 'btn centered purple', data: { disable_with: "<i class='fa fa-refresh fa-spin'>"}) %>

@@ -1,10 +1,10 @@
 <%= render partial: 'flash' %>
-<% if @auth_triggered.nil? || @auth_triggered == false %>
+<% if @update_triggered.nil? || @update_triggered == false %>
   <%= render partial: 'instructions' %>
   <%= render partial: 'form' %>
 <% end %>
 
-<% if @auth_triggered == true %>
+<% if @update_triggered == true %>
 <div class='modal fade' id='auth-modal' tabindex='-1' role='dialog' aria-hidden='true'>
   <div class='modal-dialog modal-dialog-centered' role='document'>
     <div class='modal-content'>
@@ -17,7 +17,7 @@
       <div class='modal-body'>
         Open the Trusona app on your phone and follow the directions.
         <br>&nbsp;</br>
-        When completed, update your email programs with the new password.
+        When successfully completed, update your email programs with the new password.
         <br/>
       </div>
     </div>
