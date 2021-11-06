@@ -34,8 +34,7 @@ class UsersController < ApplicationController
   def callback
     return error_status(404) unless authorized_users.include?(payload['sub'])
 
-    checksum = checksum([current_salt, params[:state], payload['nonce'], payload['sub']])
-    redirect_to("/openid/callback/#{params[:state]}/#{payload['nonce']}/#{checksum}")
+    redirect_to("/openid/callback/#{params[:state]}/#{payload['nonce']}")
   end
 
   def process_callback
@@ -50,9 +49,7 @@ class UsersController < ApplicationController
 
   def valid_state
     computed_checksum = checksum([current_salt, cookies[:state], cookies[:nonce], cookies[:email_address]])
-    stored_checksum = params[:checksum].presence || cookies[:checksum]
-
-    cookies[:state].present? && cookies[:nonce].present? && computed_checksum == stored_checksum
+    cookies[:state].present? && cookies[:nonce].present? && computed_checksum == cookies[:checksum]
   end
 
   def payload

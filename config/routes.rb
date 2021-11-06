@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   post '/openid/callback', to: 'users#callback'
 
-  get '/openid/callback/:state/:nonce/:checksum', to: 'users#process_callback'
+  get '/openid/callback/:state/:nonce', to: 'users#process_callback'
 
   match '*path' => redirect('/'), via: [:get, :post]
 
