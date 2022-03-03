@@ -13,6 +13,7 @@ require 'simplecov-lcov'
 
 SimpleCov.start 'rails' do
   formatter SimpleCov::Formatter::SimpleFormatter
+  track_files '**/*.rb'
   add_filter 'vendor'
 end
 
