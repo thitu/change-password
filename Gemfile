@@ -24,7 +24,6 @@ gem 'tzinfo-data'
 group :development, :test do
   gem 'brakeman'
   gem 'byebug'
-  gem 'coveralls_reborn', require: false
   gem 'factory_bot'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
@@ -32,7 +31,6 @@ group :development, :test do
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
-  gem 'simplecov', '0.21.2', require: false
 end
 
 group :development do
@@ -46,10 +44,13 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'coveralls_reborn', require: false
   gem 'cucumber-rails', require: false
   gem 'launchy'
   gem 'rails-controller-testing'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
+  gem 'simplecov'
+  gem 'simplecov-lcov'
   gem 'webdrivers'
 end
