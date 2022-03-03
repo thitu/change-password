@@ -6,6 +6,7 @@ before_install:
   - bin/ci/configure-coveralls
   - mkdir -p app/assets/images
   - bundle config set path 'vendor/cache'
+  - nvm install 16
 
 install:
   - gem install bundler
