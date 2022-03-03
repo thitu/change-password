@@ -12,7 +12,7 @@ require 'simplecov'
 require 'simplecov-lcov'
 
 SimpleCov.start 'rails' do
-  formatter SimpleCov::Formatter::LcovFormatter
+  formatter SimpleCov::Formatter::SimpleFormatter
   add_filter 'vendor'
 end
 
