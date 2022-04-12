@@ -9,12 +9,10 @@ require 'rspec/rails'
 Dotenv.overload('.env.test')
 
 require 'simplecov'
-require 'simplecov-lcov'
 
 SimpleCov.start 'rails' do
   formatter SimpleCov::Formatter::SimpleFormatter
   track_files '**/*.rb'
-  add_filter 'vendor'
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

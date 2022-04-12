@@ -44,12 +44,13 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'coveralls_reborn', require: false
+  gem 'coveralls_reborn', '~> 0.24.0', require: false
   gem 'cucumber-rails', require: false
   gem 'launchy'
   gem 'rails-controller-testing'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
-  gem 'simplecov', '~> 0.17.1', require: false
+  gem 'simplecov'
+  gem 'simplecov-lcov', '~> 0.8.0'
   gem 'webdrivers'
 end
