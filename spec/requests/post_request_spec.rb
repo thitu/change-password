@@ -24,7 +24,7 @@ RSpec.describe('POST requests', type: :request) do
     it 'redirects to the OIDC endpoint' do
       post '/', params: { id: 'user1@bob.com', intent: 'authorize' }
       expect(response.status).to(be(302))
-      expect(response.location).to(start_with("#{ENV['OIDC_AUTHORIZATION_ENDPOINT']}?"))
+      expect(response.location).to(start_with("#{ENV.fetch('OIDC_AUTHORIZATION_ENDPOINT')}?"))
     end
   end
 end

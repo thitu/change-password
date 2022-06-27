@@ -11,8 +11,8 @@ RSpec.describe(ApplicationMailer, type: :mailer) do
       notification = send_notification
 
       expect(notification.subject).to(eq('Password was successfully changed'))
-      expect(notification.message.to_s).to(include(ENV['MAILER_MSG']))
-      expect(notification.from).to(eq([ENV['MAILER_FROM']]))
+      expect(notification.message.to_s).to(include(ENV.fetch('MAILER_MSG')))
+      expect(notification.from).to(eq([ENV.fetch('MAILER_FROM')]))
       expect(notification.to).to(eq(['a@b.com']))
     end
   end
