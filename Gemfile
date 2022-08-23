@@ -44,7 +44,7 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'coveralls_reborn', '~> 0.24.0', require: false
+  gem 'coveralls_reborn', '~> 0.25.0', require: false
   gem 'cucumber-rails', require: false
   gem 'launchy'
   gem 'rails-controller-testing'
