@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   def callback
     return error_status(404) unless authorized_users.include?(payload['sub'])
 
-    redirect_to("/openid/callback/#{params[:state]}")
+    redirect_to("/openid/callback/#{@data[:state]}")
   end
 
   def process_callback
@@ -53,21 +53,21 @@ class UsersController < ApplicationController
   end
 
   def payload
-    @payload = JWT.decode(params[:id_token], OIDC_PUBLIC_KEY, true, algorithm: 'RS256')[0]
+    @payload = JWT.decode(@data[:id_token], OIDC_PUBLIC_KEY, true, algorithm: 'RS256')[0]
   rescue StandardError
     redirect_to_root
   end
 
   def callback_params
-    params.permit(:token_type, :id_token, :state)
+    @data = params.permit(:token_type, :id_token, :state)
   end
 
   def create_params
-    params.permit(:id, :intent, :authenticity_token)
+    @data = params.permit(:id, :intent, :authenticity_token)
   end
 
   def update_params
-    params.permit(:id, :password, :password_confirmation, :intent, :authenticity_token)
+    @data = params.permit(:id, :password, :password_confirmation, :intent, :authenticity_token)
   end
 
   def authorize
@@ -82,11 +82,11 @@ class UsersController < ApplicationController
   end
 
   def normalize_inputs
-    @email_address = cookies[:email_address].presence || params[:id]&.squish&.downcase
-    @intent = params[:intent]
+    @email_address = cookies[:email_address].presence || @data[:id]&.squish&.downcase
+    @intent = @data[:intent]
 
-    @password_confirmation = params[:password_confirmation]&.squish
-    @password = params[:password]&.squish
+    @password_confirmation = @data[:password_confirmation]&.squish
+    @password = @data[:password]&.squish
   end
 
   def init_user
